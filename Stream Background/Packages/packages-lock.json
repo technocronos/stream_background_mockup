@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.mikeschweitzer.websocket": {
+      "version": "https://github.com/mikerochip/unity-websocket.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1577a50ab7348d1a6fc4b320a3393e0e135b0f5f"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,
@@ -33,8 +40,8 @@
       "dependencies": {
         "com.unity.burst": "1.8.23",
         "com.unity.mathematics": "1.3.2",
-        "com.unity.nuget.mono-cecil": "1.11.5",
         "com.unity.test-framework": "1.4.6",
+        "com.unity.nuget.mono-cecil": "1.11.5",
         "com.unity.test-framework.performance": "3.0.3"
       },
       "url": "https://packages.unity.com"
@@ -203,6 +210,14 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "xyz.unchain.third_sdk": {
+      "version": "file:ThirdSdk",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.mikeschweitzer.websocket": "https://github.com/mikerochip/unity-websocket.git"
+      }
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

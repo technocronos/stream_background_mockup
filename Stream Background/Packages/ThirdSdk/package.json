@@ -1,0 +1,14 @@
+{
+  "name": "xyz.unchain.third_sdk",
+  "displayName": "ThirdSdk",
+  "version": "1.0.0",
+  "samples": [
+    {
+      "displayName": "ThirdSdkSample",
+      "path": "Samples~/ThirdSdkSample"
+    }
+  ],
+  "dependencies": {
+    "com.mikeschweitzer.websocket": "https://github.com/mikerochip/unity-websocket.git"
+  }
+}
