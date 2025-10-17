@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/_Start_.unity
+    guid: 8af1b3626c8373743be9f8c7d77453d4
+  - enabled: 1
+    path: Assets/Scenes/PlayableEffects.unity
+    guid: bcb17bef195a7804b9b600aa42ccbcd1
+  - enabled: 1
+    path: Assets/Scenes/Voting.unity
+    guid: 0d1ee4f1e5d19e74eb947f080d6abea6
+  - enabled: 1
+    path: Assets/Scenes/ProgressGauge.unity
+    guid: 38618505855295d46bce52f34dbb2c4f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
