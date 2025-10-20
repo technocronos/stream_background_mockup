@@ -4,6 +4,8 @@ using TMPro;
 
 public class ContributionManager : MonoBehaviour
 {
+    public Button ButtonContribute;
+
     private float m_GoalProgress = 0f;
     public Slider GoalSlider;
     public GameObject ContributionMadeGo;
@@ -11,7 +13,12 @@ public class ContributionManager : MonoBehaviour
     public TMP_Text ProgressText;
     private bool m_IsGoalReached = false;
 
-    public void MakeContribution()
+    private void Awake()
+    {
+        ButtonContribute.onClick.AddListener(MakeContribution);
+    }
+
+    private void MakeContribution()
     {
         if (m_IsGoalReached) return;
         m_GoalProgress += 0.1f;

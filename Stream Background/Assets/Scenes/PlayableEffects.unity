@@ -201,19 +201,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 392128996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1127468895}
-        m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
-        m_MethodName: StartFireworks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &392128996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685b51d74c147454cb0263a13f3653ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonFireworks: {fileID: 392128995}
   FireworksPref: {fileID: 7574860983710006568, guid: f3d4e48e62eb88642a5a619df9a9274f, type: 3}
 --- !u!4 &1127468896
 Transform:
