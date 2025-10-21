@@ -8,7 +8,7 @@ public class ContributionManager : MonoBehaviour
 
     private float m_GoalProgress = 0f;
     public Slider GoalSlider;
-    public GameObject ContributionMadeGo;
+    public ContributionNotification ContributionNotification;
     public GameObject GoalReachedGo;
     public TMP_Text ProgressText;
     private bool m_IsGoalReached = false;
@@ -22,7 +22,7 @@ public class ContributionManager : MonoBehaviour
     {
         if (m_IsGoalReached) return;
         m_GoalProgress += 0.1f;
-        ContributionMadeGo.SetActive(true);
+        ContributionNotification.OnContributionReceived();
         if (m_GoalProgress > 1f - float.Epsilon)
         {
             GoalReachedGo.SetActive(true);

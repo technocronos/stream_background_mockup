@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AAA made a contribution!
+  m_text: "AAA\u3055\u3093\u304C\u8CA2\u732E\u3057\u307E\u3057\u305F\uFF01"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ec96d4e54f81b42bf42ff2ff19770a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideAfterOverride: 0
 --- !u!1 &899905325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Contribute
+  m_text: "\u8CA2\u732E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1144,12 +1145,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.25
+  m_fontSize: 48
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 72
+  m_fontSizeMax: 48
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1463,6 +1464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1377926944}
   - component: {fileID: 1377926943}
+  - component: {fileID: 1377926945}
   m_Layer: 0
   m_Name: ContributionManager
   m_TagString: Untagged
@@ -1484,7 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonContribute: {fileID: 1217558768}
   GoalSlider: {fileID: 1728510245}
-  ContributionMadeGo: {fileID: 1974083115}
+  ContributionNotification: {fileID: 1377926945}
   GoalReachedGo: {fileID: 830221495}
   ProgressText: {fileID: 1203975967}
 --- !u!4 &1377926944
@@ -1502,6 +1504,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377926945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377926942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2b7637fb6bb1240959648f21bb68fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotificationGo: {fileID: 1974083115}
 --- !u!1 &1674509434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ec96d4e54f81b42bf42ff2ff19770a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideAfterOverride: 2
 --- !u!1 &1986371797
 GameObject:
   m_ObjectHideFlags: 0

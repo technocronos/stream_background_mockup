@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u30D0\u30CA\u30CA"
       objectReference: {fileID: 0}
+    - target: {fileID: 8567784257479351304, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
+      propertyPath: m_text
+      value: "\u2462"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -615,7 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21782663, g: 0.74646467, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -736,7 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21782663, g: 0.74646467, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1013,6 +1017,10 @@ PrefabInstance:
     - target: {fileID: 6761705440326061324, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
       propertyPath: m_text
       value: "\u30D1\u30A4\u30CA\u30C3\u30D7\u30EB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567784257479351304, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
+      propertyPath: m_text
+      value: "\u2461"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1468,7 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21782663, g: 0.74646467, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1943,7 +1951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21782663, g: 0.74646467, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2440,6 +2448,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u67D1\u6A58\u7CFB"
       objectReference: {fileID: 0}
+    - target: {fileID: 8567784257479351304, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
+      propertyPath: m_text
+      value: "\u2463"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2571,6 +2583,10 @@ PrefabInstance:
     - target: {fileID: 6761705440326061324, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
       propertyPath: m_fontSize
       value: 27.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567784257479351304, guid: 316958cd9c4442843b15d00f8a017e73, type: 3}
+      propertyPath: m_text
+      value: "\u2460"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
