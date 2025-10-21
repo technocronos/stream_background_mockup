@@ -22,4 +22,9 @@ public class SimpleSceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("_Start_");
     }
+
+    public void ExitApp()
+    {
+        Application.Quit();
+    }
 }
