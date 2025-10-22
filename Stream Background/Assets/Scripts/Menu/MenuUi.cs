@@ -7,12 +7,19 @@ public class MenuUi : MonoBehaviour
     public Button ButtonQuitApp;
     public GameObject MenuContainer;
     public bool IsActiveOnStart = false;
+    public GameObject[] ActivateOnStart;
 
     private void Awake()
     {
         ButtonClose.onClick.AddListener(CloseMenu);
-        MenuContainer.SetActive(IsActiveOnStart);
+        MenuContainer.SetActive(IsActiveOnStart); 
+        
+        foreach (var entry in ActivateOnStart)
+        {
+            entry.SetActive(true);
+        }
     }
+
     public void ToggleMenu()
     {
         MenuContainer.SetActive(!MenuContainer.activeSelf);
