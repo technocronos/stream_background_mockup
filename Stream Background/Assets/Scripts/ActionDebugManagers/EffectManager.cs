@@ -16,4 +16,14 @@ public class EffectManager : MonoBehaviour
     {
         Instantiate(FireworksPref);
     }
+
+    private void Update()
+    {
+        bool isActive = true;
+        if (PlayerPrefs.HasKey(PlayableEffectsSettingsManager.EffectsOnOff))
+        {
+            isActive = PlayerPrefs.GetInt(PlayableEffectsSettingsManager.EffectsOnOff) == 1;
+        }
+        ButtonFireworks.gameObject.SetActive(isActive);
+    }
 }

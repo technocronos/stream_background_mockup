@@ -1,16 +1,57 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GoalSettingsManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Toggle OnOffToggle;
+    public TMP_InputField GoalText;
+    public TMP_Dropdown GoalTypeDropdown;
+    public TMP_InputField GoalValueText;
+    public Button ButtonApply;
+
+    public static readonly string GoalProgressOnOff = "GoalProgressOnOff";
+    public static readonly string GoalProgressText = "GoalProgressText";
+    public static readonly string GoalProgressAimValue = "GoalProgressValue";
+    public static readonly string GoalProgressType = "GoalProgressType";
+
+    private void Awake()
     {
-        
+        ButtonApply.onClick.AddListener(OnButtonApply);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        if (PlayerPrefs.HasKey(GoalProgressText))
+        {
+            GoalText.text = PlayerPrefs.GetString(GoalProgressText);
+        }
+        if (PlayerPrefs.HasKey(GoalProgressType))
+        {
+            GoalTypeDropdown.SetValueWithoutNotify(PlayerPrefs.GetInt(GoalProgressType));
+        }
+
+        OnOffToggle.SetIsOnWithoutNotify(PlayerPrefs.HasKey(GoalProgressOnOff));
+
+        if (PlayerPrefs.HasKey(GoalProgressAimValue))
+        {
+            GoalValueText.text = PlayerPrefs.GetInt(GoalProgressAimValue).ToString();
+        }
+    }
+
+    private void OnButtonApply()
+    {
+        PlayerPrefs.SetString(GoalProgressText, GoalText.text);
+
+        PlayerPrefs.SetInt(GoalProgressType, GoalTypeDropdown.value);
+        PlayerPrefs.SetInt(GoalProgressAimValue, int.Parse(GoalValueText.text));
+
+        if (OnOffToggle.isOn && !PlayerPrefs.HasKey(GoalProgressOnOff))
+        { PlayerPrefs.SetInt(GoalProgressOnOff, 1); }
+        else if (!OnOffToggle.isOn && PlayerPrefs.HasKey(GoalProgressOnOff)) 
+        { PlayerPrefs.DeleteKey(GoalProgressOnOff); }
+
+        FindAnyObjectByType<SimpleSceneLoader>().LoadStartScene();
     }
 }
+;

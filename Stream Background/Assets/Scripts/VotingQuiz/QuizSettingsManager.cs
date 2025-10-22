@@ -29,7 +29,10 @@ public class QuizSettingsManager : MonoBehaviour
         AnswerFieldMapping.Add(QuizAnswer2, InputAnswer2);
         AnswerFieldMapping.Add(QuizAnswer3, InputAnswer3);
         AnswerFieldMapping.Add(QuizAnswer4, InputAnswer4);
+    }
 
+    private void OnEnable()
+    {
         if (PlayerPrefs.HasKey(QuizQuestion))
         {
             InputQuestion.text = PlayerPrefs.GetString(QuizQuestion);

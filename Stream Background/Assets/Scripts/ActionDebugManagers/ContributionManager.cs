@@ -4,6 +4,7 @@ using TMPro;
 
 public class ContributionManager : MonoBehaviour
 {
+    public GameObject FeatureContainer;
     public Button ButtonContribute;
 
     private float m_GoalProgress = 0f;
@@ -11,6 +12,7 @@ public class ContributionManager : MonoBehaviour
     public ContributionNotification ContributionNotification;
     public GameObject GoalReachedGo;
     public TMP_Text ProgressText;
+    public TMP_Text TitleText;
     private bool m_IsGoalReached = false;
 
     private void Awake()
@@ -32,7 +34,14 @@ public class ContributionManager : MonoBehaviour
 
     private void Update()
     {
+        bool isShown = PlayerPrefs.HasKey(GoalSettingsManager.GoalProgressOnOff);
+        FeatureContainer.SetActive(isShown);
+        if (!isShown) return;
+        var maxValue = PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressAimValue);
         GoalSlider.value = m_GoalProgress;
-        ProgressText.text = string.Format("{0:0} / 10 Apples", m_GoalProgress*10);
+        ProgressText.text = string.Format("{0:0} / {1} {2}", m_GoalProgress * maxValue,
+            maxValue,
+            PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressType) == 0 ? "アップル" : "日本円");
+        TitleText.text = PlayerPrefs.GetString(GoalSettingsManager.GoalProgressText);
     }
 }
