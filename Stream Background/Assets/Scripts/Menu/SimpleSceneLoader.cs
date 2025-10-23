@@ -26,26 +26,26 @@ public class SimpleSceneLoader : MonoBehaviour
         }
     }
 
-    public void LoadSceneEffects()
-    {
-        SceneManager.LoadScene("PlayableEffects");
-    }
+    //public void LoadSceneEffects()
+    //{
+    //    SceneManager.LoadScene("PlayableEffects");
+    //}
 
-    public void LoadSceneVoting()
-    {
-        SceneManager.LoadScene("Voting");
-    }
+    //public void LoadSceneVoting()
+    //{
+    //    SceneManager.LoadScene("Voting");
+    //}
 
-    public void LoadSceneProgress()
-    {
-        SceneManager.LoadScene("ProgressGauge");
-    }
+    //public void LoadSceneProgress()
+    //{
+    //    SceneManager.LoadScene("ProgressGauge");
+    //}
 
-    public void LoadStartScene()
-    {
-        PlayerPrefs.SetInt(HideMenuOnStart, 1);
-        SceneManager.LoadScene(0);
-    }
+    //public void LoadStartScene()
+    //{
+    //    PlayerPrefs.SetInt(HideMenuOnStart, 1);
+    //    SceneManager.LoadScene(0);
+    //}
 
     public void ExitApp()
     {
@@ -55,5 +55,17 @@ public class SimpleSceneLoader : MonoBehaviour
     public void ToggleMenu()
     {
         GetComponent<MenuUi>().ToggleMenu();
+    }
+
+    public void OpenVoting()
+    {
+        FindAnyObjectByType<QuizController>(FindObjectsInactive.Include).gameObject.SetActive(true);
+        GetComponent<MenuUi>().CloseMenu();
+    }
+
+    public void CloseVoting()
+    {
+        FindAnyObjectByType<QuizController>(FindObjectsInactive.Include).gameObject.SetActive(false);
+        GetComponent<MenuUi>().CloseMenu();
     }
 }

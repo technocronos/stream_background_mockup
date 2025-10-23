@@ -44,4 +44,9 @@ public class ContributionManager : MonoBehaviour
             PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressType) == 0 ? "アップル" : "日本円");
         TitleText.text = PlayerPrefs.GetString(GoalSettingsManager.GoalProgressText);
     }
+
+    public void ResetGauge()
+    {
+        m_GoalProgress = 0f;
+    }
 }

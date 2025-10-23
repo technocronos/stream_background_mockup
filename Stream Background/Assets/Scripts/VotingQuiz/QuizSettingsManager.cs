@@ -61,7 +61,7 @@ public class QuizSettingsManager : MonoBehaviour
             }
         }
 
-        GetComponentInParent<SimpleSceneLoader>().LoadSceneVoting();
+        GetComponentInParent<SimpleSceneLoader>().OpenVoting();
     }
 
     private void OnButtonClear()

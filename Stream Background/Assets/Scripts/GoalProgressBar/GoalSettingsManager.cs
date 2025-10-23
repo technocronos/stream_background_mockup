@@ -18,6 +18,7 @@ public class GoalSettingsManager : MonoBehaviour
     private void Awake()
     {
         ButtonApply.onClick.AddListener(OnButtonApply);
+        OnOffToggle.onValueChanged.AddListener(OnToggleOnOffChanged);
     }
 
     private void OnEnable()
@@ -46,12 +47,18 @@ public class GoalSettingsManager : MonoBehaviour
         PlayerPrefs.SetInt(GoalProgressType, GoalTypeDropdown.value);
         PlayerPrefs.SetInt(GoalProgressAimValue, int.Parse(GoalValueText.text));
 
-        if (OnOffToggle.isOn && !PlayerPrefs.HasKey(GoalProgressOnOff))
-        { PlayerPrefs.SetInt(GoalProgressOnOff, 1); }
-        else if (!OnOffToggle.isOn && PlayerPrefs.HasKey(GoalProgressOnOff)) 
-        { PlayerPrefs.DeleteKey(GoalProgressOnOff); }
 
-        FindAnyObjectByType<SimpleSceneLoader>().LoadStartScene();
+
+        FindAnyObjectByType<SimpleSceneLoader>().CloseVoting();
+        FindAnyObjectByType<ContributionManager>().ResetGauge();
+    }
+
+    private void OnToggleOnOffChanged(bool isOn)
+    {
+        if (isOn && !PlayerPrefs.HasKey(GoalProgressOnOff))
+        { PlayerPrefs.SetInt(GoalProgressOnOff, 1); }
+        else if (!isOn && PlayerPrefs.HasKey(GoalProgressOnOff))
+        { PlayerPrefs.DeleteKey(GoalProgressOnOff); }
     }
 }
 ;
