@@ -12,6 +12,7 @@ public class MenuUi : MonoBehaviour
     private void Awake()
     {
         ButtonClose.onClick.AddListener(CloseMenu);
+        ButtonQuitApp.onClick.AddListener(QuitApplication);
         MenuContainer.SetActive(IsActiveOnStart && !SimpleSceneLoader.IsHideMenuOnStart); 
         
         foreach (var entry in ActivateOnStart)
