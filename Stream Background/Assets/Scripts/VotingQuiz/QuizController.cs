@@ -10,7 +10,7 @@ public class QuizController : MonoBehaviour
 
     public List<GameObject> AnswerGoList;
 
-    void Start()
+    public void RefreshQuiz()
     {
         List<string> answerKeys = new List<string>();
         answerKeys.Add(QuizSettingsManager.QuizAnswer1);

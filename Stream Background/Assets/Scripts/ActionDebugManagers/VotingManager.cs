@@ -91,4 +91,13 @@ public class VotingManager : MonoBehaviour
         VoteNumberText3.text = string.Format("投票数: {0}", voteCount[2]);
         VoteNumberText4.text = string.Format("投票数: {0}", voteCount[3]);
     }
+
+    public void ResetCounters()
+    {
+        for (int i = 0; i < voteOptionsMaxCount; i++)
+        {
+            voteCount[i] = 0;
+        }
+        UpdateVotingPercents();
+    }
 }
