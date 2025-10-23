@@ -45,6 +45,15 @@ public class QuizSettingsManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        ButtonApply.interactable = !string.IsNullOrEmpty(InputQuestion.text) &&
+            (!string.IsNullOrEmpty(InputAnswer1.text) ||
+            !string.IsNullOrEmpty(InputAnswer2.text) ||
+            !string.IsNullOrEmpty(InputAnswer3.text) ||
+            !string.IsNullOrEmpty(InputAnswer4.text));
+    }
+
     private void OnButtonApply()
     {
         PlayerPrefs.SetString(QuizQuestion, InputQuestion.text);
