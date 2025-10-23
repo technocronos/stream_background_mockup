@@ -48,5 +48,6 @@ public class ContributionManager : MonoBehaviour
     public void ResetGauge()
     {
         m_GoalProgress = 0f;
+        m_IsGoalReached = false;
     }
 }
