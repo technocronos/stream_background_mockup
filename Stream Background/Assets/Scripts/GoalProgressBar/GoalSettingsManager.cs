@@ -50,7 +50,7 @@ public class GoalSettingsManager : MonoBehaviour
 
 
         FindAnyObjectByType<SimpleSceneLoader>().CloseVoting();
-        FindAnyObjectByType<ContributionManager>().ResetGauge();
+        UiEventsHandler.Instance.InvokeUiEvent(UiEventsHandler.OnGoalSettingsUpdatedEvent);
     }
 
     private void OnToggleOnOffChanged(bool isOn)
@@ -59,6 +59,8 @@ public class GoalSettingsManager : MonoBehaviour
         { PlayerPrefs.SetInt(GoalProgressOnOff, 1); }
         else if (!isOn && PlayerPrefs.HasKey(GoalProgressOnOff))
         { PlayerPrefs.DeleteKey(GoalProgressOnOff); }
+
+        UiEventsHandler.Instance.InvokeUiEvent(UiEventsHandler.OnGoalBarVisibilityToggled);
     }
 }
 ;

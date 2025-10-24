@@ -10,6 +10,12 @@ public class EffectManager : MonoBehaviour
     private void Awake()
     {
         ButtonFireworks.onClick.AddListener(StartFireworks);
+        UiEventsHandler.Instance.Subscribe(UiEventsHandler.OnEffectsSettingsUpdatedEvent, OnEffectsSettingUpdated);
+    }
+
+    private void OnDestroy()
+    {
+        UiEventsHandler.Instance.Unsubscribe(UiEventsHandler.OnEffectsSettingsUpdatedEvent, OnEffectsSettingUpdated);
     }
 
     private void StartFireworks()
@@ -17,7 +23,7 @@ public class EffectManager : MonoBehaviour
         Instantiate(FireworksPref);
     }
 
-    private void Update()
+    private void OnEffectsSettingUpdated()
     {
         bool isActive = true;
         if (PlayerPrefs.HasKey(PlayableEffectsSettingsManager.EffectsOnOff))

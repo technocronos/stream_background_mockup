@@ -38,6 +38,16 @@ public class VotingManager : MonoBehaviour
         UpdateVotingPercents();
     }
 
+    private void Start()
+    {
+        UiEventsHandler.Instance.Subscribe(UiEventsHandler.OnVotingSettingsUpdatedEvent, OnVotingSettingsUpdated);
+    }
+
+    private void OnDestroy()
+    {
+        UiEventsHandler.Instance.Unsubscribe(UiEventsHandler.OnVotingSettingsUpdatedEvent, OnVotingSettingsUpdated);
+    }
+
     private void OnButtonVote1()
     {
         voteCount[0]++;
@@ -92,7 +102,12 @@ public class VotingManager : MonoBehaviour
         VoteNumberText4.text = string.Format("投票数: {0}", voteCount[3]);
     }
 
-    public void ResetCounters()
+    private void OnVotingSettingsUpdated()
+    {
+        ResetCounters();
+    }
+
+    private void ResetCounters()
     {
         for (int i = 0; i < voteOptionsMaxCount; i++)
         {

@@ -14,6 +14,7 @@ public class PlayableEffectsSettingsManager : MonoBehaviour
     private void OnEffectsOnOffToggleChanged(bool isOn)
     {
         PlayerPrefs.SetInt(EffectsOnOff, isOn ? 1 : 0);
+        UiEventsHandler.Instance.InvokeUiEvent(UiEventsHandler.OnEffectsSettingsUpdatedEvent);
     }
 
     private void OnEnable()

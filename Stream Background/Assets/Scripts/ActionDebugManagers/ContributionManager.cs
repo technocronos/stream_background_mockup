@@ -20,6 +20,19 @@ public class ContributionManager : MonoBehaviour
         ButtonContribute.onClick.AddListener(MakeContribution);
     }
 
+    private void Start()
+    {
+        UiEventsHandler.Instance.Subscribe(UiEventsHandler.OnGoalSettingsUpdatedEvent, OnGoalSettingsOrStateUpdated);
+        UiEventsHandler.Instance.Subscribe(UiEventsHandler.OnGoalBarVisibilityToggled, OnGoalBarVisibilityToggled);
+        OnGoalSettingsOrStateUpdated();
+    }
+
+    private void OnDestroy()
+    {
+        UiEventsHandler.Instance.Unsubscribe(UiEventsHandler.OnGoalSettingsUpdatedEvent, OnGoalSettingsOrStateUpdated);
+        UiEventsHandler.Instance.Unsubscribe(UiEventsHandler.OnGoalBarVisibilityToggled, OnGoalBarVisibilityToggled);
+    }
+
     private void MakeContribution()
     {
         if (m_IsGoalReached) return;
@@ -30,22 +43,32 @@ public class ContributionManager : MonoBehaviour
             GoalReachedGo.SetActive(true);
             m_IsGoalReached = true;
         }
+        UpdateProgress();
     }
 
-    private void Update()
+    private void UpdateProgress()
     {
-        bool isShown = PlayerPrefs.HasKey(GoalSettingsManager.GoalProgressOnOff);
-        FeatureContainer.SetActive(isShown);
-        if (!isShown) return;
-        var maxValue = PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressAimValue);
         GoalSlider.value = m_GoalProgress;
+        var maxValue = PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressAimValue);
         ProgressText.text = string.Format("{0:0} / {1} {2}", m_GoalProgress * maxValue,
             maxValue,
             PlayerPrefs.GetInt(GoalSettingsManager.GoalProgressType) == 0 ? "アップル" : "日本円");
+    }
+
+    private void OnGoalSettingsOrStateUpdated()
+    {
+        ResetGauge();
+        UpdateProgress();
         TitleText.text = PlayerPrefs.GetString(GoalSettingsManager.GoalProgressText);
     }
 
-    public void ResetGauge()
+    private void OnGoalBarVisibilityToggled()
+    {
+        bool isShown = PlayerPrefs.HasKey(GoalSettingsManager.GoalProgressOnOff);
+        FeatureContainer.SetActive(isShown);
+    }
+
+    private void ResetGauge()
     {
         m_GoalProgress = 0f;
         m_IsGoalReached = false;

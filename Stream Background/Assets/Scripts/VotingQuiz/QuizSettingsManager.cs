@@ -71,8 +71,8 @@ public class QuizSettingsManager : MonoBehaviour
         }
 
         GetComponentInParent<SimpleSceneLoader>().OpenVoting();
-        FindAnyObjectByType<VotingManager>().ResetCounters();
         FindAnyObjectByType<QuizController>().RefreshQuiz();
+        UiEventsHandler.Instance.InvokeUiEvent(UiEventsHandler.OnVotingSettingsUpdatedEvent);
     }
 
     private void OnButtonClear()
